@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="libs/bootstrap-4.5.0/dist/css/bootstrap.min.css">
+  <!-- estilos del rd-navbar -->
+  <link rel="stylesheet" href="libs/rd-navbar-master/dist/css/rd-navbar.css">
+
+  <link rel="stylesheet" href="libs/fontawesome-free-5.12.0/css/all.min.css">
+
+  <link rel="stylesheet" href="css/styles.css">
+
+  <title>Wordpress</title>
+</head>
+
+<body style="height: 1600px;">
+
+  <!-- COMENZAMOS!!! -->
+
+
+  <!-- todo el contenido del navbar tiene que tener la clase rd-navbar-wrap -->
+  <header class="rd-navbar-wrap">
+    <nav class="rd-navbar">
+      <div class="rd-panel-encabezado bg-secondary pt-4 pb-3 pb-md-0">
+
+
+        <!-- con container-lg asemos que su anchira hasta llegar a esaa medida sea 100% -->
+        <div class="container-lg">
+          <div class="row justify-content-center justify-content-md-between align-items-md-center">
+
+            <div class="col-12 text-center mb-3 col-md-5 text-md-left mb-md-0">
+              <a href="#"><img src="img/wporg-logo.svg" alt="Logo del sitio" width="290" height="auto"
+                  class="img-fluid"></a>
+
+            </div>
+
+            <div class="col-7 col-md-4">
+              <form action="#" class="bloque-buscar position-relative">
+
+                <div class="input-group">
+                  <input type="text" id="campoBuscar" name="campoBuscar" class="form-control"
+                    placeholder="Buscar Wordpress.org" autocomplete="off">
+                  <button type="submit" class="btnBuscar"><i class="fas fa-search"></i></button>
+                </div>
+              </form>
+            </div>
+
+          </div> <!-- row -->
+
+          <!-- boton hamburguesa creado por rd-navbar   Boton disparador-->
+          <!-- data-rd-navbar-toggle=".rd-navbar-nav-wrap" llama al panel para los enlaces -->
+          <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
+
+        </div><!-- container -->
+
+      </div> <!-- rd-panel-encabezado -->
+
+
+      <!-- Creamos etiqueta hermana que tendra el boton victima collapse-->
+      <!-- debe estar dentro de la clase rd-navbar-outer -->
+      <div class="rd-navbar-outer pb-md-0">
+        <div class="container-lg">
+          <!-- display block al div para que ocupe todo el ancho en md para manipular los ul -->
+          <div class="rd-navbar-nav-wrap d-md-block">
+            <!-- contenedor del collapse -->
+            <!-- el ul debe tener el rd-navbar-nav para que funcione -->
+            <ul class="rd-navbar-nav list-unstyled mb-0  d-md-flex">
+              <li class="active"><a href="#" class="pl-md-0">Escaparate</a></li>
+              <li><a href="#">Temas</a></li>
+              <li><a href="#">Plugins</a></li>
+              <li><a href="#">Movil</a></li>
+              <li>
+                <!-- crando un submenu -->
+                <a href="#">Soporte</a>
+                <ul class="rd-navbar-dropdown list-unstyled">
+                  <li><a href="#">Documentacion</a></li>
+                  <li><a href="#">Foros</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">Colabora</a>
+                <ul class="rd-navbar-dropdown list-unstyled">
+                  <li><a href="#">Cinco para el futuro</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Acerca de</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Hosting</a></li>
+              <!-- ml-auto absorbe lo sobrante en el div si esta dentro de un flex -->
+              <li class="ml-md-auto"><a href="#"
+                  class="btn btn-primary mx-3 px-0 py-2 py-md-1 mt-md-1  mx-md-0 px-md-3 ">Obten Wordpress</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+    </nav> <!-- cierre de rd-navbar -->
+  </header> <!-- cierre rd-navbar-wrap -->
+
+
+  <!-- Seccion de descarga -->
+  <section class="descargaWordpress text-center d-md-none">
+    <h2 class="h3 d-sm-inline-block mr-sm-2">¿Listo para comenzar?</h2>
+    <a href="#" class="btn btn-primary btn-lg px-4 px-sm-3 mb-2">Obten Wordpress</a>
+  </section>
+
+  <!-- Seccion de bienvenidos  -->
+  <section class="Bienvenidos bg-primary text-white text-center py-7">
+    <div class="container-lg">
+      <div class="row justify-content-center">
+        <div class="col-11 col-sm-10 col-lg-9 col-xl-7">
+          <h1>Conoce a WordPress</h1>
+          <p class="lead mt-4">WordPress es un software de código abierto que puede usar para crear un hermoso sitio
+            web,
+            blog o aplicación.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- contenedor de alerta de ingles -->
+  <div class="contenedor-idioma">
+    <div class="alert alert-success rounded-0 text-center text-dark small mt-lg-3 mx-lg-6">
+      WordPress tambien esta disponible en Ingles en <a href="#">Ingles</a>
+    </div>
+  </div>
+
+
+
+  <!-- Seccion Backend -->
+  <section class="backend">
+
+    <div class="container-lg">
+      <div class="row justify-content-center">
+        <div class="col-11 col-md-10 col-lg-7">
+          <h3 class="h4 text-muted font-weight-light text-center my-5">Hermosos diseños, características potentes y la libertad de construir lo que quieras. WordPress es gratis
+            y no tiene precio al mismo tiempo.</h3>
+        </div>
+        
+        <div class="col-12 col-lg-9 px-0">
+          <!-- creamos contenedor para poder insertar otra img -->
+          <!-- para adaptar el estilo en lg le ponemos px de 6 para moverlo despues con el disenoAdmin -->
+          <div class="contenedorAdmin px-3 pt-3 pr-md-10 pr-lg-0 px-lg-5">
+            <div class="disenoAdmin"></div>
+            <img src="img/iphone-themes.png" alt="Foto Backend Wordpress" class="backendMovil" width="200">
+          </div>
+        </div>
+        
+
+        <div class="col-11 col-md-9 col-lg-7 text-center pt-10 pb-5">
+          <h3 class="h1 font-weight-light mb-3">Confiado por los mejores</h3>
+          <p class="h4 text-muted font-weight-light">El 35% de la web usa WordPress, desde blogs de pasatiempos hasta los sitios de noticias más grandes en línea.</p>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- Seccion de banner de Wordpress -->
+  <section class="banner">
+    <div class="parallax" data-parallax-image="img/collage-min.jpg">
+
+    </div>
+  </section>
+
+
+
+
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="js/jquery-3.5.1.slim.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="libs/bootstrap-4.5.0/dist/js/bootstrap.min.js"></script>
+  <!-- Script de navegacion -->
+  <script src="libs/rd-navbar-master/dist/js/jquery.rd-navbar.min.js"></script>
+  <!-- Script Universal Parrallax -->
+  <script src="libs/universal-parallax-master/dist/universal-parallax.min.js"></script>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,337 @@
+/* .row>*{
+    border: 1px solid red;
+} */
+
+
+/*--------------------------------------------
+1. Patrones de Colores
+---------------------------------------------*/
+$primario: #0073AA;
+$secundario: #23282D;
+$texto: #32373C;
+
+
+
+/*--------------------------------------------
+2. Modificando las variables de bootstrap
+---------------------------------------------*/
+//modificando el mapa de colores de bootstrap
+$theme-colors:(
+    "primary": $primario,
+    "secondary":  $secundario
+);
+//Personalizando la apariencia de bootstrap
+//agrega sombreado a los componentes de bootstrap
+$enable-shadows: true;
+// le agreaga degradado a los componentes
+$enable-gradients: true;
+
+$body-color: $texto;
+
+$link-color:                              $primario;
+$link-decoration:                         none;
+$link-hover-color:                        $primario;
+$link-hover-decoration:                   underline;
+$border-radius:                           .2rem;
+$border-radius-lg:                        .3rem;
+$font-family-base:                        "Open Sans", sans-serif;
+
+//Modificando clases de espaciado de bootstrap
+$spacer: 1rem;
+$spacers:(
+
+    0: 0,
+    1: ($spacer * .25),
+    2: ($spacer * .5),
+    3: $spacer,
+    4: ($spacer * 1.5),
+    5: ($spacer * 3),
+    6: ($spacer * 3.5),
+    7: ($spacer * 4),
+    8: ($spacer * 4.5),
+    9: ($spacer * 5),
+    10: ($spacer * 6),
+  
+);
+
+
+
+/*--------------------------------------------
+3. Importando Bootstrap
+---------------------------------------------*/
+@import"../libs/bootstrap-4.5.0/scss/bootstrap";
+
+/*--------------------------------------------
+4. Estilos para el encabezado y rd-navbar
+---------------------------------------------*/
+
+.bloque-buscar{
+    // modificando el bloque de busqueda
+    .form-control{
+        border: 0;
+        border-radius: 2px;
+        background: darken($secundario, $amount: 5%);
+        color: #ababab;
+        border-bottom: 1px solid lighten($secundario, $amount: 10);
+    }
+    .btnBuscar{
+        position: absolute;
+        right: 0;
+        top: 0;
+        background: transparent;
+        border: none;
+        color: #ababab;
+        padding: .4rem .5rem;
+        z-index: 10;
+    }
+    
+}
+
+//-------estilos rd navbar en la vista movil
+
+
+.rd-navbar-fixed .rd-panel-encabezado{
+    position: fixed;
+    width: 100%;
+    // ponemos zindex de 16 ya q rd-navbar su desplegable tinee 15
+    z-index: 16;
+}
+.rd-navbar-fixed .rd-navbar-toggle{
+    position: absolute;
+    top: 5rem;
+    left: .8rem;
+    background: transparent;
+    border: none;
+    transform: scale(1.4); //aumentamos el tamaño
+    outline: 0;
+    padding: 0;
+}
+.rd-navbar-fixed .rd-navbar-toggle span::before,
+.rd-navbar-fixed .rd-navbar-toggle span::after,
+.rd-navbar-fixed .rd-navbar-toggle span{
+    background-color: #888888;
+    
+}
+// cambiamos el color del desplegable
+.rd-navbar-fixed .rd-navbar-nav-wrap{
+    background: $secundario;
+    top: 2rem;
+}
+// estilos a los enlaces
+.rd-navbar-fixed .rd-navbar-nav li > a{
+    padding: 1rem 1rem 1rem 2rem;
+    color: #e2e2e2;
+    font-size: 13px !important;
+}
+.rd-navbar-fixed .rd-navbar-nav li.opened > a,
+.rd-navbar-fixed .rd-navbar-nav li > a:hover{
+    background: transparent;
+    text-decoration: none;
+    color: $primario;
+}
+// estilo para el enlace activo
+.rd-navbar-fixed .rd-navbar-nav li.active >a{
+    color: $primario;
+    background: transparent;
+}
+// estilo para el submenu
+.rd-navbar-fixed .rd-navbar-submenu li>a{
+    padding-left: 2.8rem;
+    padding-top: .7rem;
+    padding-bottom: .7rem;
+}
+// estilo para el icono
+.rd-navbar-fixed .rd-navbar-submenu-toggle:before {
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    content: '\f078';
+    font-size: .8rem;
+    transform: translateY(-30%);
+    transition: all .3s ease;
+}
+.rd-navbar-fixed .rd-navbar-submenu-toggle:hover{
+    color: white;
+}
+
+// opned cuando se abra el submenu
+.rd-navbar-fixed .opened .rd-navbar-submenu-toggle::before{
+    transform: rotate(180deg) translateY(30%);
+}
+
+
+
+//------------ estilo del contenedor del desplegable en vista desktop
+
+.rd-navbar-static .rd-navbar-outer{
+    background: $secundario;
+}
+
+.rd-navbar-static .rd-navbar-nav > li > a {
+    font-weight: normal;
+    font-size: .85rem;
+    line-height: 1.5rem;
+    padding: .8rem .5rem;
+    text-transform: capitalize;
+    color: #eeeeee;
+
+    // agregamos un estilo anidado con & y lo que queremos
+    &:hover{
+        color: $primario;
+        text-decoration: none;
+    }
+}
+
+//estilos para el submenu del enlace
+.rd-navbar-static .rd-navbar-nav > li > .rd-navbar-dropdown {
+    width: auto; //para que se adapte al contenido
+    padding: 0;
+    left: 0%;
+    margin-top: 8px;
+    margin-left: -5px;
+    transform: translateY(0); //le quitamos el desplazamiento de abajo hacia arriba
+    background: lighten($secundario, $amount: 7%);
+}
+
+// creamos un before al submenu pra el estilo
+.rd-navbar-static .rd-navbar-nav > li > .rd-navbar-dropdown::before{
+    content: '';
+    position: absolute;
+    background: lighten($secundario, $amount: 7%);
+    width: .8rem;
+    height: .8rem;
+    left: 25%;
+    top: 0;
+    transform: rotate(45deg) translateY(-8px);
+}
+// estilos para los enlaces de los submenus
+.rd-navbar-static .rd-navbar-dropdown li > a, 
+.rd-navbar-static .rd-navbar-megamenu li > a {
+    color: white;
+    white-space: nowrap; // ase que en el texto no pege un salto de linea
+
+    &:hover{
+        color: $primario;
+        text-decoration: none;
+        background: transparent;
+    }
+}
+
+/*--------------------------------------------
+5. Descarga Wordpress
+---------------------------------------------*/
+.descargaWordpress{
+    // ubicamos el elemento por la propiedad fixed del header
+    padding: 10rem 0 1rem 0;
+}
+
+/*--------------------------------------------
+6. Seccion de Bienvenidos
+---------------------------------------------*/
+.Bienvenidos h1{
+    font-size: 4.2rem;
+    font-weight: 300;
+    line-height: 1;
+    vertical-align: inherit;
+}
+
+/*--------------------------------------------
+7. Contenedor de Idiomas
+---------------------------------------------*/
+.contenedor-idioma{
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/*--------------------------------------------
+8. Seccion Backend
+---------------------------------------------*/
+.contenedorAdmin{
+    border-bottom: 1px solid #eeeeee;
+    position: relative;
+    overflow: hidden;
+}
+.disenoAdmin{
+    background: url(../img/screen-themes.png);
+    background-size: cover;
+    height: 24rem;
+    box-shadow: 0 0 8px #bdbbbb;
+    border-radius: 6px 6px 0 0; // borde solo a la parte superior
+    
+}
+.backendMovil{
+    position: absolute;
+    bottom: -6.2rem;
+    right: 1.5rem;
+}
+
+
+
+
+/*--------------------------------------------
+9. Seccion Banner de Wordpress
+---------------------------------------------*/
+.banner{
+    height: 18.75rem; //=300px
+}
+
+.parallax__container {
+	clip: rect(0, auto, auto, 0);
+	height: 100%;
+	left: 0;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: -100;
+}
+
+.parallax {
+	position: fixed;
+	top: 0;
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	width: 100%;
+
+	/* BG behaviour */
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+
+
+
+
+
+/*--------------------------------------------
+X. SHOW de medias querys
+---------------------------------------------*/
+@media (max-width:768px){
+    // 6. Seccion de Bienvenidos
+    .Bienvenidos h1{
+        font-size: 3.2rem;
+    }
+}
+
+// ----------------------Vista LG Backend-------------------------------
+
+@media (min-width:768px){
+    .banner{
+        height: 37.5rem;
+    }
+}
+
+
+// ----------------------Vista LG Backend-------------------------------
+
+@media (min-width:992px){
+    .disenoAdmin{
+        position: relative; //para poder moverlo
+        left: -2rem;
+    }
+    .backendMovil{
+        right: .3rem;
+    }
+}
